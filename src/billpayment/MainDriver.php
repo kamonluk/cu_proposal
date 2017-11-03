@@ -1,6 +1,6 @@
 <?php 
 
-require('ServiceType.php');
+/* require('ServiceType.php');
 require('billpayment.php');
 
 class MainDriver 
@@ -12,4 +12,12 @@ class MainDriver
 };
 
 //	Call driver to pay bill
-MainDriver::pay();
+MainDriver::pay(); */
+
+$ID = $_GET["ID"];
+
+
+echo $ID;
+
+header("location:pay.html?ID1=$ID");
+?>

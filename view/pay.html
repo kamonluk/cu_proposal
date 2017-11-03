@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
- 
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,12 +33,23 @@
     .pink {
         color: #ef5285;
     }
- 
+
     .bg-pink {
         background: #ef5285;
     }
 </style>
- 
+
+
+
+
+
+
+
+
+
+
+
+
 <body>
     <header class="header">
         <nav class="navbar" style="background: #ef5285">
@@ -76,7 +87,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <a id="backBtn" href="../main" class="btn btn-secondary" <i class="fa fa-reply">
+                        <a id="backBtn" href="../view/main.html" class="btn btn-secondary" <i class="fa fa-reply">
                             </i> ย้อนกลับ</a>
                     </div>
                 </div>
@@ -146,9 +157,69 @@
                     </div>
                 </div>
             </div>
+
         </section>
+
+
+        <script type="text/javascript">
+        var allcookies = document.cookie;
+        //document.write ("All Cookies : " + allcookies );
+
+            if (document.cookie.length != 0)
+            {
+                var cookiesArray = document.cookie.split("; ");
+                for (var i = 0; i < cookiesArray.length; i++)
+                {
+                    var nameValueArray = cookiesArray[i].split("=");
+                    if (nameValueArray[0] == "name")
+                    {
+                        //document.getElementById("txtName").value = nameValueArray[1];
+                        //document.write ("All Cookies : " + cookiearray );
+                        //document.write ("1");
+                        var name = nameValueArray[1]
+                        document.write (name);
+                        //document.write("\n");
+                        document.write("<br>");
+                    }
+                    else if (nameValueArray[0] == "accnum")
+                    {
+                        //document.getElementById("txtEmail").value = nameValueArray[1];
+                        //document.write ("All Cookies : " + cookiearray );
+                        var accnum = nameValueArray[1]
+                        document.write (accnum);
+                        //document.write("\n");
+                        document.write("<br>");
+                    }
+                    else if (nameValueArray[0] == "balance")
+                    {
+                        //document.getElementById("txtGender").value = nameValueArray[1];
+                        //document.write ("All Cookies : " + cookiearray );
+                        var balance = nameValueArray[1]
+                        document.write (balance);
+                    }
+                }
+            }
+            else
+            {
+                alert("No cookies found");
+            }
+
+            </script>
+
+        <script type="text/javascript">
+
+                //var allcookies = document.cookie;
+                 //document.write ("All Cookies : " + allcookies );
+                 // Get all the cookies pairs in an array
+                //cookiearray = allcookies.split(';');
+                // document.write ("All Cookies : " + cookiearray );
+
+
+        </script>
+
+
     </div>
- 
+
     <!-- Javascript files-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="../lib/js/tether.min.js"></script>
@@ -158,5 +229,5 @@
     <script src="../lib/js/front.js"></script>
     <script src="../lib/js/sweetalert2.js"></script>
 </body>
- 
+
 </html>
