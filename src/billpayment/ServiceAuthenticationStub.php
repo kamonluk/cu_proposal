@@ -4,9 +4,9 @@ class ServiceAuthenticationStub
 {
     public static function accountAuthenticationProvider( $accNo )
 	{
-		$mockUpAccountNumber=1234567890;
-		$mockUpAccountName="Pui";
-		$mockUpAccountBalance=500;
+		$mockUpAccountNumber=0123444667;
+		$mockUpAccountName="Kritsada Kancha";
+		$mockUpAccountBalance=2000000;
 		$mockUpErrorString="account not found";
 		$isError=false;
 		
