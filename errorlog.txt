@@ -1,0 +1,64 @@
+Log Time: 04-11-2017 06:33:43am
+Error: Class 'BillPayment_getBill' not found in C:\xampp\htdocs\pui_ka\src\controller.php:46
+Stack trace:
+#0 {main}
+
+Log Time: 04-11-2017 06:34:29am
+TypeError: Argument 1 passed to Operation\BillPayment::getBill() must be of the type string, null given, called in C:\xampp\htdocs\pui_ka\src\controller.php on line 49 and defined in C:\xampp\htdocs\pui_ka\src\billpayment\billpayment.php:60
+Stack trace:
+#0 C:\xampp\htdocs\pui_ka\src\controller.php(49): Operation\BillPayment->getBill(NULL, 'ELECTRIC_BILLIN...')
+#1 {main}
+
+Log Time: 04-11-2017 06:40:55am
+Error: Class 'Operation\ChargeStub' not found in C:\xampp\htdocs\pui_ka\src\controller.php:50
+Stack trace:
+#0 {main}
+
+Log Time: 04-11-2017 06:45:27am
+TypeError: Argument 1 passed to Operation\ChargeStub::__construct() must be of the type string, null given, called in C:\xampp\htdocs\pui_ka\src\controller.php on line 48 and defined in C:\xampp\htdocs\pui_ka\src\billpayment\ChargeStub.php:8
+Stack trace:
+#0 C:\xampp\htdocs\pui_ka\src\controller.php(48): Operation\ChargeStub->__construct(NULL, 'PHONE_BILLING')
+#1 {main}
+
+Log Time: 04-11-2017 06:45:28am
+TypeError: Argument 1 passed to Operation\ChargeStub::__construct() must be of the type string, null given, called in C:\xampp\htdocs\pui_ka\src\controller.php on line 48 and defined in C:\xampp\htdocs\pui_ka\src\billpayment\ChargeStub.php:8
+Stack trace:
+#0 C:\xampp\htdocs\pui_ka\src\controller.php(48): Operation\ChargeStub->__construct(NULL, 'PHONE_BILLING')
+#1 {main}
+
+Log Time: 04-11-2017 06:45:30am
+TypeError: Argument 1 passed to Operation\ChargeStub::__construct() must be of the type string, null given, called in C:\xampp\htdocs\pui_ka\src\controller.php on line 48 and defined in C:\xampp\htdocs\pui_ka\src\billpayment\ChargeStub.php:8
+Stack trace:
+#0 C:\xampp\htdocs\pui_ka\src\controller.php(48): Operation\ChargeStub->__construct(NULL, 'PHONE_BILLING')
+#1 {main}
+
+Log Time: 04-11-2017 06:45:31am
+TypeError: Argument 1 passed to Operation\ChargeStub::__construct() must be of the type string, null given, called in C:\xampp\htdocs\pui_ka\src\controller.php on line 48 and defined in C:\xampp\htdocs\pui_ka\src\billpayment\ChargeStub.php:8
+Stack trace:
+#0 C:\xampp\htdocs\pui_ka\src\controller.php(48): Operation\ChargeStub->__construct(NULL, 'PHONE_BILLING')
+#1 {main}
+
+Log Time: 04-11-2017 06:47:12am
+TypeError: Argument 1 passed to Operation\ChargeStub::__construct() must be of the type string, null given, called in C:\xampp\htdocs\pui_ka\src\controller.php on line 48 and defined in C:\xampp\htdocs\pui_ka\src\billpayment\ChargeStub.php:8
+Stack trace:
+#0 C:\xampp\htdocs\pui_ka\src\controller.php(48): Operation\ChargeStub->__construct(NULL, 'WATER_BILLING')
+#1 {main}
+
+Log Time: 04-11-2017 06:47:20am
+TypeError: Argument 1 passed to Operation\ChargeStub::__construct() must be of the type string, null given, called in C:\xampp\htdocs\pui_ka\src\controller.php on line 48 and defined in C:\xampp\htdocs\pui_ka\src\billpayment\ChargeStub.php:8
+Stack trace:
+#0 C:\xampp\htdocs\pui_ka\src\controller.php(48): Operation\ChargeStub->__construct(NULL, 'ELECTRIC_BILLIN...')
+#1 {main}
+
+Log Time: 04-11-2017 06:47:41am
+TypeError: Argument 1 passed to Operation\ChargeStub::__construct() must be of the type string, null given, called in C:\xampp\htdocs\pui_ka\src\controller.php on line 48 and defined in C:\xampp\htdocs\pui_ka\src\billpayment\ChargeStub.php:8
+Stack trace:
+#0 C:\xampp\htdocs\pui_ka\src\controller.php(48): Operation\ChargeStub->__construct(NULL, 'PHONE_BILLING')
+#1 {main}
+
+Log Time: 04-11-2017 06:47:44am
+TypeError: Argument 1 passed to Operation\ChargeStub::__construct() must be of the type string, null given, called in C:\xampp\htdocs\pui_ka\src\controller.php on line 48 and defined in C:\xampp\htdocs\pui_ka\src\billpayment\ChargeStub.php:8
+Stack trace:
+#0 C:\xampp\htdocs\pui_ka\src\controller.php(48): Operation\ChargeStub->__construct(NULL, 'WATER_BILLING')
+#1 {main}
+

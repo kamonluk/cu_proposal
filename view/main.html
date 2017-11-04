@@ -71,9 +71,9 @@
                             <div class="statistic d-flex align-items-center bg-white has-shadow">
                                 <div class="icon bg-pink"><i class="fa fa-id-card-o"></i></div>
                                 <div class="text">
-                                    <strong><font class="pink"><span id="accName">Kritsada Kancha</span></font></strong>
+                                    <strong><font class="pink"><span id="accName"></span></font></strong>
                                     <br>
-                                    <span id="accNo">0123444667</span>
+                                    <span id="accNo"></span>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                                 <div class="text">
                                     <strong><font class="pink">ยอดเงินคงเหลือ</font></strong>
                                     <br>
-                                    <span id="accBalance">2000000</span> <span id="unit">บาท</span>
+                                    <span id="accBalance"></span> <span id="unit">บาท</span>
                                 </div>
                             </div>
                         </div>
@@ -123,15 +123,7 @@
                         </div>
                     </a>
 
-
-
-
-
-
-
-
-
-                    <a id="payBtn" type="post" href="javascript:myJavascriptFunction()"  class="list-group-item" onclick="loadView('pay')">
+                    <a id="payBtn" type="post" href="javascript:setDefaultValue()"  class="list-group-item" onclick="loadView('pay')">
                         <div class="row">
                             <div class="statistics col-lg-12 col-12">
                                 <div class="statistic d-flex align-items-center">
@@ -145,15 +137,6 @@
             </section>
             <script>
 
-
-              //var javascriptVariable = "0123444667";window.location.href = "driver.php?ID=" + javascriptVariable;
-            /*  document.cookie = "name=Kritsada";
-              document.cookie = "accnum=0123444667";
-              document.cookie = "balance=2000000";
-
-              var allcookies = document.cookie;
-              document.write ("All Cookies : " + allcookies );*/
-              //window.location.href = "pay.html";
 
 </script>
 
@@ -170,22 +153,71 @@
     <script src="../lib/js/sweetalert2.js"></script>
 
 
-    <script>
-
-    function myJavascriptFunction() {
-      //var javascriptVariable = "0123444667";window.location.href = "driver.php?ID=" + javascriptVariable;
+    <script type="text/javascript">
+	
+	window.onload = function () {
+			$("#accName").text("Kritsada Kancha");
+			$("#accNo").text("0123444667");
+			$("#accBalance").text(commaSeparateNumber(2000000));
+	}
+		
+	// Store value to cookies
+    function setDefaultValue() {
       document.cookie = "name=Kritsada Kancha";
       document.cookie = "accnum=0123444667";
       document.cookie = "balance=2000000";
-      //var allcookies = document.cookie;
-      //document.write ("All Cookies : " + allcookies );
       window.location.href = "pay.html";
-
-
+	  
+	  //document.cookie = "name=Tony Stark";
+      //document.cookie = "accnum=4235750021";
+      //document.cookie = "balance=4000000";
+      //window.location.href = "pay.html";
+	  //
+	  //document.cookie = "name=Bruce Wayne";
+      //document.cookie = "accnum=5902150431";
+      //document.cookie = "balance=9555000";
+      //window.location.href = "pay.html";
+	  //
+	  //document.cookie = "name=Martin Flower";
+      //document.cookie = "accnum=9835602413";
+      //document.cookie = "balance=400000";
+      //window.location.href = "pay.html";
+	  //
+	  //document.cookie = "name=SpearMan PicSun";
+      //document.cookie = "accnum=7840125312";
+      //document.cookie = "balance=50001";
+      //window.location.href = "pay.html";
+	  //
+	  //document.cookie = "name=Johny Walker";
+      //document.cookie = "accnum=1924356780";
+      //document.cookie = "balance=890200";
+      //window.location.href = "pay.html";
+	  //
+	  //document.cookie = "name=Jack Sparrow";
+      //document.cookie = "accnum=2476492431";
+      //document.cookie = "balance=1000000";
+      //window.location.href = "pay.html";
+	  //
+	  //document.cookie = "name=Clara Oswald";
+      //document.cookie = "accnum=9178906629";
+      //document.cookie = "balance=5000";
+      //window.location.href = "pay.html";
+	  //
+	  //document.cookie = "name=River Song";
+      //document.cookie = "accnum=3430368497";
+      //document.cookie = "balance=10000";
+      //window.location.href = "pay.html";
     }
 
-
-
+	
+	// for add comma
+    function commaSeparateNumber(val){
+		while (/(\d+)(\d{3})/.test(val.toString())){
+			val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
+		}
+		return val;
+    }
+  
   </script>
 
 </body>
