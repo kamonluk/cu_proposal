@@ -1,27 +1,6 @@
 <?php
 namespace Operation;
 
-<<<<<<< HEAD
-class ServiceAuthenticationStub
-{
-    public static function accountAuthenticationProvider( $accNo )
-	{
-		$mockUpAccountNumber=0123444667;
-		$mockUpAccountName="Kritsada Kancha";
-		$mockUpAccountBalance=2000000;
-		$mockUpErrorString="account not found";
-		$isError=false;
-		
-		if( !$isError )
-		{
-			return array('accNo'=>$accNo, 'accName'=>$mockUpAccountName, 'accBalance'=>$mockUpAccountBalance);
-		}
-		else
-		{
-			return AccountInformationException("Account number : {$accNo} not found.");
-		}
-    }    
-=======
 class ServiceAuthenticationStub {
 	
 	private $accountNumber;
@@ -64,7 +43,6 @@ class ServiceAuthenticationStub {
 					return $answer;
 	}
    
->>>>>>> e774238d591fc9a79af0e07696bd8e82541eb0ae
 }
 
 ?>
