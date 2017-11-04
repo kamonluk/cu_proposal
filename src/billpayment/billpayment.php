@@ -1,5 +1,5 @@
-<?php
-
+<?php namespace Operation;
+	
 require_once 'AccountInformationException.php';
 require_once 'BillingException.php';
 require_once 'ServiceAuthentication.php';
@@ -10,9 +10,9 @@ require_once 'DBConnection.php';
 
 class BillPayment
 {
-	
-    public static function pay( $serviceType, $accNo )
-	{    
+    //public static function pay( $serviceType, $accNo )
+	public function pay( $accNo, $serviceType)
+	{
 		//	It's stub.
         //$account = ServiceAuthenticationStub::accountAuthenticationProvider( $accNo );
 		$account = ServiceAuthentication::accountAuthenticationProvider( $accNo );
@@ -51,6 +51,10 @@ class BillPayment
 		
         return $account;
     }
+			
+	
+	
+	
     public function resetDatabase()
     {
         DBConnection::restore();           
