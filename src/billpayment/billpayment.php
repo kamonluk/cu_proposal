@@ -14,8 +14,8 @@ class BillPayment
 	public function pay( $accNo, $serviceType)
 	{
 		//	It's stub.
-        //$account = ServiceAuthenticationStub::accountAuthenticationProvider( $accNo );
-		$account = ServiceAuthentication::accountAuthenticationProvider( $accNo );
+        $account = ServiceAuthenticationStub::accountAuthenticationProvider( $accNo );
+		//$account = ServiceAuthentication::accountAuthenticationProvider( $accNo );
 				
         if(count($account)==1)
         {
@@ -26,8 +26,8 @@ class BillPayment
         //$amount = DBConnection::getCharge($accNo, $serviceType);
 		
 		// It's stub.
-		//$amount = ChargeStub::getCharge( $accNo, $serviceType );
-		$amount = Charge::getCharge( $accNo, $serviceType );
+		$amount = ChargeStub::getCharge( $accNo, $serviceType );
+		//$amount = Charge::getCharge( $accNo, $serviceType );
 				
         if( $account['accBalance'] < $amount )
         {
