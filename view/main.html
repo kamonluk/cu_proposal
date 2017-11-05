@@ -154,20 +154,23 @@
 
 
     <script type="text/javascript">
-	
+
 	window.onload = function () {
 			$("#accName").text("Kritsada Kancha");
 			$("#accNo").text("0123444667");
 			$("#accBalance").text(commaSeparateNumber(2000000));
 	}
-		
+
 	// Store value to cookies
     function setDefaultValue() {
       document.cookie = "name=Kritsada Kancha";
       document.cookie = "accnum=0123444667";
       document.cookie = "balance=2000000";
+      //document.cookie = "water=0";
+      //document.cookie = "electric=0";
+      //document.cookie = "phone=0";
       window.location.href = "pay.html";
-	  
+
 	  //document.cookie = "name=Tony Stark";
       //document.cookie = "accnum=4235750021";
       //document.cookie = "balance=4000000";
@@ -209,7 +212,7 @@
       //window.location.href = "pay.html";
     }
 
-	
+
 	// for add comma
     function commaSeparateNumber(val){
 		while (/(\d+)(\d{3})/.test(val.toString())){
@@ -217,7 +220,7 @@
 		}
 		return val;
     }
-  
+
   </script>
 
 </body>

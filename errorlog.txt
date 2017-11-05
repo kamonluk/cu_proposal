@@ -62,3 +62,21 @@ Stack trace:
 #0 C:\xampp\htdocs\pui_ka\src\controller.php(48): Operation\ChargeStub->__construct(NULL, 'WATER_BILLING')
 #1 {main}
 
+Log Time: 04-11-2017 18:10:04pm
+TypeError: Argument 1 passed to Operation\ChargeStub::__construct() must be of the type string, null given, called in C:\xampp\htdocs\pui_ka\src\controller.php on line 50 and defined in C:\xampp\htdocs\pui_ka\src\billpayment\ChargeStub.php:8
+Stack trace:
+#0 C:\xampp\htdocs\pui_ka\src\controller.php(50): Operation\ChargeStub->__construct(NULL, 'WATER_BILLING')
+#1 {main}
+
+Log Time: 04-11-2017 18:10:04pm
+TypeError: Argument 1 passed to Operation\ChargeStub::__construct() must be of the type string, null given, called in C:\xampp\htdocs\pui_ka\src\controller.php on line 50 and defined in C:\xampp\htdocs\pui_ka\src\billpayment\ChargeStub.php:8
+Stack trace:
+#0 C:\xampp\htdocs\pui_ka\src\controller.php(50): Operation\ChargeStub->__construct(NULL, 'WATER_BILLING')
+#1 {main}
+
+Log Time: 04-11-2017 18:11:07pm
+TypeError: Argument 1 passed to Operation\ChargeStub::__construct() must be of the type string, null given, called in C:\xampp\htdocs\pui_ka\src\controller.php on line 50 and defined in C:\xampp\htdocs\pui_ka\src\billpayment\ChargeStub.php:8
+Stack trace:
+#0 C:\xampp\htdocs\pui_ka\src\controller.php(50): Operation\ChargeStub->__construct(NULL, 'WATER_BILLING')
+#1 {main}
+

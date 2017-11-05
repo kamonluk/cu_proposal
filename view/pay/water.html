@@ -143,10 +143,12 @@
 	var chargeType = "";
 	var chargeAmount = 0;
 	var balance = 0;
+  var flag = 0;
+  var lastBal=0;
 		window.onload = function () {
-			
-			
-			
+
+
+
 			if (document.cookie.length != 0)
             {
                 var cookiesArray = document.cookie.split("; ");
@@ -161,9 +163,10 @@
                     {
                          accountNumber = nameValueArray[1]
                     }
-                    else if (nameValueArray[0] == "balance")
+                    else if (nameValueArray[0] == "balance"&&lastBal==0)
                     {
                          balance = nameValueArray[1]
+                         lastBal = lastBal +1 ;
                     }
 					else if (nameValueArray[0] == "chargeType")
                     {
@@ -173,48 +176,53 @@
                     {
                          chargeAmount = nameValueArray[1]
                     }
+                    else if (nameValueArray[0] == "water")
+                    {
+                         flag = nameValueArray[1]
+                    }
                 }
             }
             else
             {
                 alert("No cookies found");
             }
-			
-			if(chargeAmount==0){
-				$("#charge").text("ไม่มีค่าใช้จ่ายค้างชำระ");
+
+      if(chargeAmount==0 || flag =='1' ){
+        $("#charge").text("ไม่มีค่าใช้จ่ายค้างชำระ");
+        chargeAmount=0;
 			}else{
 				$("#charge").text(commaSeparateNumber(chargeAmount));
 			}
-			$("#amount").val(chargeAmount); 
+			$("#amount").val(chargeAmount);
 		}
-		
+
 		function commaSeparateNumber(val){
 			while (/(\d+)(\d{3})/.test(val.toString())){
 				val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
 			}
 			return val;
 		}
-	
-	
-	
+
+
+
 	//--
-	
+
 	$("#waterForm").submit(function(event) {
-	
+
 			$.ajax({
 					method: "POST",
 						url: "../../src/controller.php",
 						dataType: "json",
-						data: { 
+						data: {
 								service:"ServiceAuthenticationStub",
 								transaction: {
 								   accountNumber: accountNumber
 								}
 						}
-					 
+
 				}).done(function (answer) {
 						if (answer.Message == null) {
-                            
+
                         } else {
 							swal(
                                 'ผิดพลาด',
@@ -224,11 +232,11 @@
                         }
 						event.preventDefault();
 				  });
-				  
-				  
+
+
 			var result=0;
 			result = balance - chargeAmount;
-			
+
 			if(chargeAmount==0){
 								 swal({
 								title: 'ผิดพลาด',
@@ -236,7 +244,7 @@
 								type: 'error',
 								confirmButtonText: 'OK'
 							}).then(function() {
-								
+
 							});
 
 							event.preventDefault();
@@ -248,7 +256,7 @@
 										type: 'error',
 										confirmButtonText: 'OK'
 									}).then(function() {
-										
+
 									});
 									event.preventDefault();
 			}
@@ -259,17 +267,17 @@
 										type: 'error',
 										confirmButtonText: 'OK'
 									}).then(function() {
-										
+
 									});
 									event.preventDefault();
-			}else if (result<0 ){		
+			}else if (result<0 ){
 						swal({
 											title: 'ผิดพลาด',
 											text: "ยอดเงินในบัญชีไม่เพียงพอ",
 											type: 'error',
 											confirmButtonText: 'OK'
 										}).then(function() {
-											
+
 										});
 										event.preventDefault();
 			}
@@ -284,27 +292,30 @@
 								cancelButtonText: 'ยกเลิก'
 							}).then(function() {
 								var result=0;
-								
+
 									result = balance - chargeAmount;
-								
+
 										swal(
 											'ชำระค่าน้ำเรียบร้อย',
 											'ยอดเงินคงเหลือ = ' + commaSeparateNumber(result) + " บาท",
 											'success'
 										);
-										chargeAmount = 0;
+
 										balance =  balance - chargeAmount;
+                    chargeAmount = 0;
 										$("#charge").text("คุณไม่มีค่าน้ำค้างชำระ");
-										$("#amount").val(chargeAmount); 
+										$("#amount").val(0);
+s
+                    document.cookie = "balance=" + balance;
+                        document.cookie = "water=1" ;
 							});
 
 							event.preventDefault();
 			}
-			
-	
-	
+
+
+
 	});
-	
            function isNumber(n) {
 			  return !isNaN(parseFloat(n)) && isFinite(n);
 			}

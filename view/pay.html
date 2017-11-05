@@ -172,7 +172,8 @@
         <script type="text/javascript">
 			var chargeType = '';
 			var allcookies = document.cookie;
-			
+      var lastBal=0;
+
             if (document.cookie.length != 0)
             {
                 var cookiesArray = document.cookie.split("; ");
@@ -181,19 +182,20 @@
                     var nameValueArray = cookiesArray[i].split("=");
                     if (nameValueArray[0] == "name")
                     {
-                        var name = nameValueArray[1]
+                        var name = nameValueArray[1];
                         //document.write (name);
                         //document.write("<br>");
                     }
                     else if (nameValueArray[0] == "accnum")
                     {
-                        var accnum = nameValueArray[1]
+                        var accnum = nameValueArray[1];
                         //document.write (accnum);
                         //document.write("<br>");
                     }
-                    else if (nameValueArray[0] == "balance")
+                    else if (nameValueArray[0] == "balance"&&lastBal==0)
                     {
-                        var balance = nameValueArray[1]
+                        var balance = nameValueArray[1];
+                        lastBal = lastBal +1 ;
                         //document.write (balance);
                     }
                 }
@@ -203,7 +205,7 @@
                 alert("No cookies found");
             }
 
-		//0
+		//
 		$("#electricBtn").click(function(){
 			chargeType = "ELECTRIC_BILLING";
 			$.ajax({
@@ -213,7 +215,7 @@
                 data: {
 					service:"BillPaymentInq",
 					transaction: {
-						accountNumber: accnum, 
+						accountNumber: accnum,
 						chargeType: chargeType
 					}
 				}
@@ -224,7 +226,7 @@
 		  	   });
 			 event.preventDefault();
 		});
-		
+
 		//1
 		$("#waterBtn").click(function(){
 			chargeType = "WATER_BILLING";
@@ -232,14 +234,14 @@
 		  			method: "POST",
 		  			url: "../src/controller.php",
 		  			dataType: "json",
-		  			data: { 
+		  			data: {
 							service:"BillPaymentInq",
 							transaction: {
-							accountNumber: accnum, 
+							accountNumber: accnum,
 							chargeType: chargeType
 							}
 					}
-		  			
+
 		  		})
 		  		  .done(function (billPaymentInq) {
 					url = '../view/pay/water.html';
@@ -248,7 +250,7 @@
 		  		  });
 				 event.preventDefault();
 		});
-		
+
 		//2
 		$("#phoneBtn").click(function(){
 		chargeType = "PHONE_BILLING";
@@ -256,14 +258,14 @@
 				method: "POST",
 		  			url: "../src/controller.php",
 		  			dataType: "json",
-		  			data: { 
+		  			data: {
 							service:"BillPaymentInq",
 							transaction: {
-							accountNumber: accnum, 
+							accountNumber: accnum,
 							chargeType: chargeType
 							}
 					}
-				 
+
 			})
 			  .done(function (billPaymentInq) {
 				url = '../view/pay/phone.html';
@@ -272,16 +274,17 @@
 			  });
 			 event.preventDefault();
 		});
-		
-		
+
+
 		function setCookie(billPaymentInq)
 		{
 				//deleteAllCookies();
 				document.cookie = "chargeType=" + chargeType;
 				document.cookie = "billPaymentInq=" + billPaymentInq;
+
 		}
-		
-		
+
+
 		//function deleteAllCookies() {
 		//	var cookies = document.cookie.split(";");
 
@@ -292,10 +295,10 @@
 		//		document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
 		//	}
 		//}
-			
-			
-			
-			
+
+
+
+
         </script>
 
 
